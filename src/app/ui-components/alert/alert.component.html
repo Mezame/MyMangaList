@@ -1,0 +1,11 @@
+<ng-container *ngIf="alert$ | async as alert">
+
+    <div class="alert-content">
+
+        <mml-icon class="alert-icon" [class]="alert.type">{{ alertIcon }}</mml-icon>
+
+        <span class="alert-message body-medium">{{ alert.message }}</span>
+
+    </div>
+
+</ng-container>

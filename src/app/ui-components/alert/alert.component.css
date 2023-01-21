@@ -1,0 +1,57 @@
+:host {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 56px;
+    text-align: center;
+
+    width: 100%;
+}
+
+:host>.alert-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    text-align: left;
+
+    width: auto;
+    max-width: 560px;
+    height: auto;
+
+    padding: 24px;
+
+    border-radius: 28px;
+
+    background: var(--mml-theme-color-surface-1);
+    box-shadow: var(--mml-theme-elevation-4);
+    z-index: 1;
+
+    animation: fadeIn .45s;
+}
+
+:host>.alert-content>.alert-icon.info {
+    color: #00B8D9
+}
+
+:host>.alert-content>.alert-icon.success {
+    color: #36B37E;
+}
+
+:host>.alert-content>.alert-icon.warning {
+    color: #FFAB00
+}
+
+:host>.alert-content>.alert-icon.error {
+    color: var(--mml-theme-color-error-40);
+}
+
+:host>.alert-content>.alert-message {
+    color: var(--mml-theme-color-neutral-0);
+    white-space: pre-wrap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

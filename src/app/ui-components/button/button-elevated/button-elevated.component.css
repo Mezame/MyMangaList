@@ -1,0 +1,34 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    width: auto;
+    height: auto;
+
+    padding: 10px 24px;
+    
+    border: none;
+    border-radius: 100px;
+
+    background: var(--mml-theme-color-surface-1);
+    color: var(--mml-theme-color-primary-40);
+    box-shadow: var(--mml-theme-elevation-1);
+}
+
+:host:hover {
+    background: linear-gradient(0deg, var(--mml-theme-color-primary-opacity-08), var(--mml-theme-color-primary-opacity-08)), var(--mml-theme-color-surface-2);
+    cursor: pointer;
+}
+
+:host:active {
+    background: linear-gradient(0deg, var(--mml-theme-color-primary-opacity-12), var(--mml-theme-color-primary-opacity-12)), var(--mml-theme-color-surface-2);
+}
+
+:host:disabled {
+    background: rgba(31, 31, 31, 0.12);
+    box-shadow: none;
+    color: rgba(28, 27, 31, 0.38);
+    cursor: default;
+}

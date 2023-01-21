@@ -1,0 +1,35 @@
+.outer-login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.outer-login-container>.login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 312px;
+}
+
+.outer-login-container>.login-container>.login-user-avatar {
+    display: flex;
+    align-self: center;
+
+    width: 112px;
+    height: 112px;
+
+    border-radius: 28px;
+}
+
+.outer-login-container>.login-container>.login-anon {
+    display: flex;
+    align-self: center;
+}

@@ -1,1 +1,193 @@
-/* You can add global styles to this file, and also import other style files */
+@import './normalize.css';
+
+@font-face {
+    font-family: 'Nunito';
+    src: url(assets/Nunito-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    font-weight: 100 700;
+    font-display: block;
+    src: url(assets/material-symbols-rounded.woff2) format('woff2');
+}
+
+.material-symbols-rounded {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-rounded {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+:root {
+    --mml-theme-color-primary-40: #005AC1;
+    --mml-theme-color-primary-50: #2B74E2;
+
+    --mml-theme-color-secondary-10: #141B2C;
+    --mml-theme-color-secondary-90: #DBE2F9;
+
+    --mml-theme-color-error-40: #BA1A1A;
+
+    --mml-theme-color-neutral-0: #000000;
+    --mml-theme-color-neutral-10: #1B1B1F;
+    --mml-theme-color-neutral-99: #FBFCFF;
+    --mml-theme-color-neutral-100: #FFFFFF;
+
+    --mml-theme-color-neutral-variant-30: #44474F;
+    --mml-theme-color-neutral-variant-50: #74777F;
+    --mml-theme-color-neutral-variant-70: #A9ABB4;
+
+    --mml-theme-color-primary: var(--mml-theme-color-primary-40);
+    --mml-theme-color-on-primary: var(--mml-theme-color-neutral-100);
+
+    --mml-theme-color-secondary-container: var(--mml-theme-color-secondary-90);
+    --mml-theme-color-on-secondary-container: var(--mml-theme-color-secondary-10);
+
+    --mml-theme-color-dark-on-secondary-container: var(--mml-theme-color-secondary-90);
+
+    --mml-theme-color-error: var(--mml-theme-color-error-40);
+
+    --mml-theme-color-background: #FAFAFA;
+    --mml-theme-color-on-background: var(--mml-theme-color-neutral-10);
+    --mml-theme-color-surface: var(--mml-theme-color-neutral-99);
+    --mml-theme-color-on-surface: var(--mml-theme-color-neutral-10);
+
+    --mml-theme-color-on-surface-variant: var(--mml-theme-color-neutral-variant-30);
+    --mml-theme-color-outline: var(--mml-theme-color-neutral-variant-50);
+
+    --mml-theme-color-surface-1: linear-gradient(0deg, rgba(0, 90, 193, 0.05), rgba(0, 90, 193, 0.05)), var(--mml-theme-color-neutral-99);
+    --mml-theme-color-surface-2: linear-gradient(0deg, rgba(0, 90, 193, 0.08), rgba(0, 90, 193, 0.08)), var(--mml-theme-color-neutral-99);
+
+    --mml-theme-color-primary-opacity-08: rgba(0, 90, 193, 0.08);
+    --mml-theme-color-primary-opacity-12: rgba(0, 90, 193, 0.12);
+
+    --mml-theme-color-on-primary-opacity-08: rgba(255, 255, 255, 0.08);
+    --mml-theme-color-on-primary-opacity-12: rgba(255, 255, 255, 0.12);
+
+    --mml-theme-color-on-secondary-container-opacity-08: rgba(20, 27, 44, 0.08);
+    --mml-theme-color-on-secondary-container-opacity-12: rgba(20, 27, 44, 0.12);
+
+    --mml-theme-color-on-surface-variant-opacity-08: rgba(73, 69, 79, 0.08);
+
+    --mml-theme-color-error-opacity-08: rgba(186, 26, 26, 0.08);
+    --mml-theme-color-error-opacity-12: rgba(186, 26, 26, 0.12);
+
+    --mml-theme-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --mml-theme-elevation-2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    --mml-theme-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+    --mml-theme-elevation-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+    /*--mml-theme-elevation-5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);*/
+
+    --mml-theme-font-family: 'Nunito', sans-serif;
+    --mml-theme-font-style: normal;
+    --mml-theme-font-size-base: 17px;
+    --mml-theme-font-line-height-base: calc(var(--mml-theme-font-size-base) * 1.25);
+    --mml-theme-font-letter-spacing-base: calc(var(--mml-theme-font-line-height-base) / 40);
+}
+
+.label-medium,
+.label-large,
+.label-extra-large,
+.body-small,
+.body-medium,
+.body-large,
+.title-small,
+.title-large
+ {
+    font-family: var(--mml-theme-font-family);
+    font-style: var(--mml-theme-font-style);
+}
+
+.body-small,
+.body-medium,
+.body-large {
+    font-weight: 400;
+}
+
+.label-medium,
+.label-large,
+.label-extra-large,
+.title-small,
+.title-large
+ {
+    font-weight: 500;
+}
+
+.label-medium {
+    font-size: calc(var(--mml-theme-font-size-base) / 1.25);
+    line-height: calc(var(--mml-theme-font-line-height-base) / 1.25);
+    letter-spacing: calc(var(--mml-theme-font-letter-spacing-base) / 1.25);
+}
+
+.label-large {
+    font-size: var(--mml-theme-font-size-base);
+    line-height: var(--mml-theme-font-line-height-base);
+    letter-spacing: var(--mml-theme-font-letter-spacing-base);
+}
+
+.label-extra-large {
+    font-size: calc(var(--mml-theme-font-size-base) * 1.25);
+    line-height: calc(var(--mml-theme-font-line-height-base) * 1.25);
+    letter-spacing: calc(var(--mml-theme-font-letter-spacing-base) * 1.25);
+}
+
+.body-small {
+    font-size: calc(var(--mml-theme-font-size-base) / 1.25);
+    line-height: calc(var(--mml-theme-font-line-height-base) / 1.25);
+    letter-spacing: calc(var(--mml-theme-font-letter-spacing-base) / 1.25);
+}
+
+.body-medium {
+    font-size: var(--mml-theme-font-size-base);
+    line-height: var(--mml-theme-font-line-height-base);
+    letter-spacing: var(--mml-theme-font-letter-spacing-base);
+}
+
+.body-large {
+    font-size: calc(var(--mml-theme-font-size-base) * 1.25);
+    line-height: calc(var(--mml-theme-font-line-height-base) * 1.25);
+    letter-spacing: calc(var(--mml-theme-font-letter-spacing-base) * 1.25);
+}
+
+.title-small {
+    font-size: var(--mml-theme-font-size-base);
+    line-height: var(--mml-theme-font-line-height-base);
+    letter-spacing: var(--mml-theme-font-letter-spacing-base);
+}
+
+.title-large {
+    font-size: calc(var(--mml-theme-font-size-base) * 1.25 * 1.25);
+    line-height: calc(var(--mml-theme-font-line-height-base) * 1.25 * 1.25);
+    letter-spacing: calc(var(--mml-theme-font-letter-spacing-base) * 1.25 * 1.25);
+}
+
+html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    background: var(--mml-theme-color-background);
+}

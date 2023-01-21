@@ -1,0 +1,152 @@
+<mml-dialog title="Editing manga" (dialogEvent)="getDialogElementClicked($event)" *ngIf="isDialogOpen">
+
+    <div class="dialog-form" [formGroup]="mangaForm" (change)="updateMissingFormValues()">
+
+        <div class="manga-title">
+
+            <mml-label>Title</mml-label>
+
+            <input id="mangaTitle" mml-text-field formControlName="mangaTitle">
+
+            <mml-supporting-text text=" "></mml-supporting-text>
+
+        </div>
+
+        <div class="manga-status-chapter">
+
+            <div class="manga-status">
+
+                <mml-label>Status</mml-label>
+
+                <mml-select id="mangaStatus" [currentOption]="mangaStatusSelect.selectEvent | async"
+                    (selectEvent)="mangaForm.value.mangaStatus = $event" #mangaStatusSelect>
+
+                    <option value="reading"> Reading </option>
+
+                    <option value="completed"> Completed </option>
+
+                    <option value="planning"> Planning </option>
+
+                    <option value="paused"> Paused </option>
+
+                </mml-select>
+
+                <mml-supporting-text text=" "></mml-supporting-text>
+
+            </div>
+
+            <div class="manga-chapter" *ngIf="mangaStatusSelect.currentOption !== 'planning' ">
+
+                <mml-label>Chapter</mml-label>
+
+                <input id="mangaChapter" mml-text-field formControlName="mangaChapter"
+                    [isError]="mangaChapter?.errors?.['pattern']">
+
+                <mml-supporting-text [isError]="true" text="Only valid numbers."
+                    *ngIf="mangaChapter?.errors?.['pattern']"></mml-supporting-text>
+
+            </div>
+
+        </div>
+
+        <div class="manga-reader-sites">
+
+            <div class="wrapper-manga-reader-sites">
+
+                <mml-label>Manga reader site</mml-label>
+
+                <textarea id="mangaSite" mml-text-area formControlName="mangaSite"
+                    [isError]="mangaSite?.errors?.['webUrl']"></textarea>
+
+                <mml-supporting-text [isError]="true" text="Must be a valid url." *ngIf="mangaSite?.errors?.['webUrl']">
+                </mml-supporting-text>
+
+            </div>
+
+        </div>
+
+        <div class="manga-cover-image">
+
+            <div class="manga-upload-image">
+
+                <mml-label>Cover image</mml-label>
+
+                <button type="button" class="upload-image-button" (click)="mangaCoverImageInput.click()"
+                    *ngIf="!fileAsDataURL && !manga?.imageUrl; else removeImageButton">
+
+                    <span class="upload-image-button-text label-large">Upload image</span>
+
+                    <mml-icon>upload</mml-icon>
+
+                </button>
+
+                <ng-template #removeImageButton>
+
+                    <button type="button" class="upload-image-button" (click)="removeImage(mangaCoverImageInput)">
+
+                        <span class="upload-image-button-text label-large">Remove image</span>
+
+                        <mml-icon>remove</mml-icon>
+
+                    </button>
+
+                </ng-template>
+
+                <input id="mangaCoverImage" type="file" (input)="fileUpload(mangaCoverImageInput.files!)" hidden
+                    #mangaCoverImageInput>
+
+                <mml-supporting-text text="1MB size limit. Accepted: jpg, png."
+                    *ngIf="!fileValidationMessage; else mangaCoverImageErrors"></mml-supporting-text>
+
+                <ng-template #mangaCoverImageErrors>
+
+                    <mml-supporting-text [text]="fileValidationMessage!" [isError]="true"></mml-supporting-text>
+
+                </ng-template>
+
+            </div>
+
+            <div class="manga-image-preview" *ngIf="manga?.imageUrl">
+
+                <img width="242" height="128" src="https://localhost:3000/images/{{manga.imageUrl}}">
+
+            </div>
+
+            <div class="manga-image-preview" *ngIf="fileAsDataURL && fileAsDataURL !== ''">
+
+                <img width="242" height="128" [src]="fileAsDataURL">
+
+            </div>
+
+        </div>
+
+        <div class="edit-manga-group-buttons">
+
+            <button mml-button-text type="button" class="delete-button label-large" (click)="emitMangaToBeDeleted(manga.id)">
+
+                Delete manga
+
+            </button>
+
+            <div class="edit-control-group">
+
+                <button mml-button-text type="button" class="cancel-button label-large" (click)="closeDialog()">
+
+                    Cancel
+
+                </button>
+
+                <button mml-button-fill type="button" class="add-manga-button label-large"
+                    (click)="emitMangaForm(mangaForm)" [disabled]="!mangaForm.valid">
+
+                    Edit manga
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</mml-dialog>

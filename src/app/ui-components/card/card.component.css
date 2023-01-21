@@ -1,0 +1,17 @@
+:host {
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 12px;
+
+    background: var(--mml-theme-color-neutral-100);
+    box-shadow: var(--mml-theme-elevation-2);
+}
+
+:host:hover {
+    background: var(--mml-theme-color-surface);
+    box-shadow: var(--mml-theme-elevation-3);
+}

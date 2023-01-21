@@ -1,0 +1,17 @@
+<div class="outer-login-container">
+
+    <div class="login-container">
+
+        <img class="login-user-avatar" src="assets/user-avatar.jpg" alt="user avatar">
+
+        <div>
+
+            <input mml-text-field type="password" aria-label="password" [class.error]="hasError" (keyup.enter)="login($event)">
+
+            <mml-supporting-text [text]="supportingText" [class.error]="hasError"></mml-supporting-text>
+
+        </div>
+
+    </div>
+
+</div>

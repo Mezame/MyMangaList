@@ -1,0 +1,22 @@
+<div hidden #temporal>
+    <ng-content></ng-content>
+</div>
+<button class="select-button body-medium" type="button" (click)="showSelectMenu()" (focus)="isSelectButtonFocused = true"
+    (blur)="isSelectButtonFocused = false">
+
+    {{ selectButtonText }}
+
+    <mml-icon [class.focused]="isSelectButtonFocused" #selectButtonIcon>{{ iconName }}</mml-icon>
+
+</button>
+
+<select class="select-menu" (click)="hideSelectMenu()" (change)="updateSelect(selectMenu)" 
+[size]="selectMenuSize" [class.hide]="!isSelectMenuOpen" #selectMenu>
+
+    <ng-container *ngFor="let option of selectMenuOptions">
+
+        <option class="select-option body-medium" [value]="option.value"> {{ option.text }} </option>
+
+    </ng-container>
+
+</select>

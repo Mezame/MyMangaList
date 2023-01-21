@@ -1,0 +1,186 @@
+:host {
+    --body-content-width: 1040px;
+    --body-4-col-width: calc((var(--body-content-width) - (24px * 3)) / 4);
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+}
+
+:host>.tab-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+:host>.tab-list>.tab-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: auto;
+    height: 56px;
+
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 100px;
+
+    background: none;
+    color: var(--mml-theme-color-primary-40);
+}
+
+:host>.tab-list>.tab-item:hover:not(.active) {
+    background: var(--mml-theme-color-primary-opacity-08);
+    cursor: pointer;
+}
+
+:host>.tab-list>.tab-item:active:not(.active) {
+    background: var(--mml-theme-color-primary-opacity-12);
+}
+
+:host>.tab-list>.tab-item.active {
+    background: var(--mml-theme-color-primary-opacity-12);
+}
+
+:host>.container-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    padding: 24px 0 0;
+
+    width: var(--body-content-width);
+    height: 56px;
+}
+
+:host>.container-panel>.add-manga-button>[mml-button-elevated] {
+    box-sizing: border-box;
+    height: 56px;
+}
+
+:host>.container-panel>.panel-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+:host>.container-panel>.panel-options.hide {
+    display: none;
+}
+
+:host>.container-panel>.panel-options>.segmented-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: auto;
+    height: 56px;
+}
+
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    box-sizing: border-box;
+    width: auto;
+    height: 44px;
+
+    padding: 12px 12px 12px 16px;
+
+    border: 1px solid;
+    border-radius: 100px 0px 0px 100px;
+
+    background: none;
+    color: var(--mml-theme-color-on-surface);
+    border-color: var(--mml-theme-color-outline);
+}
+
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    box-sizing: border-box;
+    width: auto;
+    height: 44px;
+
+    padding: 12px 16px 12px 12px;
+
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    border-radius: 0px 100px 100px 0px;
+
+    background: none;
+    color: var(--mml-theme-color-on-surface);
+    border-color: var(--mml-theme-color-outline);
+}
+
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-left:hover:not(.active),
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-right:hover:not(.active) {
+    background: var(--mml-theme-color-primary-opacity-08);
+    cursor: pointer;
+}
+
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-left:active:not(.active),
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-right:active:not(.active) {
+    background: var(--mml-theme-color-primary-opacity-12);
+}
+
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-left.active,
+:host>.container-panel>.panel-options>.segmented-buttons>.segmented-button-right.active {
+    background: var(--mml-theme-color-primary-opacity-12);
+}
+
+:host>.container-panel>.panel-options>.container-sorting-select {
+    box-sizing: border-box;
+    width: var(--body-4-col-width);
+}
+
+:host>.container-no-manga {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+:host>.container-no-manga>.no-manga {
+    width: var(--body-content-width);
+}
+
+:host>.footer {
+    display: none;
+    width: 100%;
+    height: 24px;
+
+    background: none;
+}
+
+:host .spacer {
+    flex: 1 1 auto;
+    padding-top: 32px;
+}
+
+@media only screen and (max-width: 1088px) {
+    :host {
+        --body-content-width: 774px;
+        --body-3-col-width: calc((var(--body-content-width) - (24px * 2)) / 3);
+    }
+
+    :host>.container-panel>.panel-options>.container-sorting-select {
+        width: var(--body-3-col-width);
+    }
+}

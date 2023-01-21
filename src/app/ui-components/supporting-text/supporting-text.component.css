@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    padding: 4px 16px 0;
+
+    color: var(--mml-theme-color-on-background);
+
+    white-space: pre-line;
+}
+
+:host.error {
+
+    color: var(--mml-theme-color-error);
+}

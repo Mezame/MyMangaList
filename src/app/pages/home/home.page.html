@@ -1,0 +1,100 @@
+<mml-top-app-bar>
+
+    <span class="spacer"></span>
+
+    <mml-icon-button type="button" look="standard" icon="logout" (click)="logout()"></mml-icon-button>
+
+</mml-top-app-bar>
+
+<div class="tab-list" *ngIf="showTabList" #tabList>
+
+    <ng-container *ngFor="let tabItem of tabListArray">
+
+        <ng-container *ngFor="let statusAvaliable of mangaStatusAvaliable">
+
+            <button type="button" class="tab-item label-large" (click)="updateMangaFilterByStatus(tabItem)"
+                [routerLink]="['../' + tabItem]" routerLinkActive="active" *ngIf="tabItem == statusAvaliable"> {{
+                tabItem | titlecase }} </button>
+
+        </ng-container>
+
+    </ng-container>
+
+</div>
+
+<div class="container-panel">
+
+    <div class="add-manga-button" (click)="addMangaDialog.openDialog()">
+
+        <button mml-button-elevated type="button" class="label-extra-large">
+
+            <mml-icon> add </mml-icon>
+
+            Add manga
+
+        </button>
+
+    </div>
+
+    <ng-container *ngIf="manga$ | async as manga">
+
+        <div class="panel-options" [class.hide]="manga.length < 4">
+
+            <div class="segmented-buttons">
+
+                <button type="button" class="segmented-button-left" [class.active]="currentSegmentButton == 'asc'"
+                    (click)="activateSegmentedButton('asc')">
+
+                    <mml-icon>
+                        arrow_downward
+                    </mml-icon>
+
+                </button>
+
+                <button type="button" class="segmented-button-right" [class.active]="currentSegmentButton == 'des'"
+                    (click)="activateSegmentedButton('des')">
+
+                    <mml-icon>
+                        arrow_upward
+                    </mml-icon>
+
+                </button>
+
+            </div>
+
+            <div class="container-sorting-select">
+
+                <mml-select id="sortManga" [currentOption]="sortMangaSelect.selectEvent | async"
+                    (selectEvent)="getSortMangaFromSelect($event)" #sortMangaSelect>
+
+                    <option value="lastUpdate"> Last update </option>
+
+                    <option value="title"> Title </option>
+
+                </mml-select>
+
+            </div>
+
+        </div>
+
+    </ng-container>
+
+</div>
+
+<mml-manga-card-list [manga$]="manga$" (openEditMangaDialogEvent)="editMangaDialog.openDialog($event)"
+    (addMangaChapterEvent)="addMangaChapter($event)" #mangaList>
+</mml-manga-card-list>
+
+<div class="container-no-manga" *ngIf="showNoManga">
+
+    <span class="no-manga body-large">Currently, there is not any manga. Try to add some manga.</span>
+
+</div>
+
+<mml-add-manga-dialog (submitFormEvent)="addManga($event)" #addMangaDialog></mml-add-manga-dialog>
+
+<mml-edit-manga-dialog (submitFormEvent)="editManga($event)" (deleteMangaButtonEvent)="deleteOneManga($event)" #editMangaDialog></mml-edit-manga-dialog>
+
+<span class="spacer"></span>
+
+<mml-alert></mml-alert>

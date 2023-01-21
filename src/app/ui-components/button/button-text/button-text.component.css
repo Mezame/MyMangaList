@@ -1,0 +1,34 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: auto;
+    height: auto;
+
+    padding: 10px 16px;
+    
+    border: none;
+    border-radius: 100px;
+
+    background: none;
+    color: var(--mml-theme-color-primary-40);
+}
+
+:host:hover {
+    background: var(--mml-theme-color-primary-opacity-08);
+    cursor: pointer;
+}
+
+:host:active {
+    background: var(--mml-theme-color-primary-opacity-12);
+}
+
+:host:disabled {
+    background: none;
+    box-shadow: none;
+    color: rgba(28, 27, 31, 0.38);
+    cursor: default;
+}

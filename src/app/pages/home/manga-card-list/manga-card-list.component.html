@@ -1,0 +1,53 @@
+<div class="stacked-cards" *ngFor="let stack of stackedCardsArray; index as i, count as c">
+
+    <ng-container *ngFor="let manga of mangaFilteredByStackedCard(i + 1, c) | async">
+
+        <mml-card class="container-card" (mouseenter)="showMangaOptionsButtons($event)" (mouseleave)="hideMangaOptionsButtons($event)">
+
+            <div class="card-media">
+
+                <img src="https://localhost:3000/images/{{ manga.imageUrl }}" alt="manga cover" *ngIf="manga.imageUrl">
+
+                <div class="wrapper-manga-options-buttons hide">
+
+                    <div class="manga-options-buttons">
+
+                        <mml-icon-button type="button" look="tonal" icon="edit" (click)="emitOpenEditMangaDialog(manga.id)"></mml-icon-button>
+
+                        <mml-icon-button type="button" look="tonal" icon="link" (click)="goToMangaSite(manga.mangaSite)" *ngIf="manga.mangaSite"></mml-icon-button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-headline">
+
+                <span class="card-manga-title title-small">{{ manga.title }}</span>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-manga-chapter body-medium">Ch. {{ manga.chapter }}</span>
+
+                <span class="card-manga-updated-date body-small">Updated: {{ manga.updateDate | date }}</span>
+
+                <div class="wrapper-manga-add-chapter-button hide">
+
+                    <div class="manga-options-buttons">
+
+                        <mml-icon-button type="button" look="standard" icon="add" (click)="emitAddMangaChapter(manga.id, manga.chapter)"></mml-icon-button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </mml-card>
+
+    </ng-container>
+
+</div>

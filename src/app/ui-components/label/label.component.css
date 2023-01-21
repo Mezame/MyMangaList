@@ -1,0 +1,7 @@
+.mml-label {
+    display: inline-block;
+
+    padding: 0 16px 4px;
+    
+    color: var(--mml-theme-color-on-surface-variant);
+}

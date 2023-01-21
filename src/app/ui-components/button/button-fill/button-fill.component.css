@@ -1,0 +1,36 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: auto;
+    height: auto;
+
+    padding: 10px 16px;
+    
+    border: none;
+    border-radius: 100px;
+
+    background: var(--mml-theme-color-primary);
+    color: var(--mml-theme-color-on-primary);
+}
+
+:host:hover {
+    background: linear-gradient(0deg, var(--mml-theme-color-on-primary-opacity-08), var(--mml-theme-color-on-primary-opacity-08)), var(--mml-theme-color-primary);
+    box-shadow: var(--mml-theme-elevation-1);
+    cursor: pointer;
+}
+
+:host:active {
+    background: linear-gradient(0deg, var(--mml-theme-color-on-primary-opacity-12), var(--mml-theme-color-on-primary-opacity-12)), var(--mml-theme-color-primary);
+    box-shadow: none;
+}
+
+:host:disabled {
+    background: rgba(31, 31, 31, 0.12);
+    box-shadow: none;
+    color: rgba(28, 27, 31, 0.38);
+    cursor: default;
+}

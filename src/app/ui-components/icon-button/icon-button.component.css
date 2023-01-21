@@ -1,0 +1,45 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+
+    padding: 8px;
+
+    border: none;
+    border-radius: 100px;
+}
+
+:host:hover {
+    cursor: pointer;
+}
+
+:host.standard {
+    background: none;
+    color: var(--mml-theme-color-primary-40);
+}
+
+:host.standard:hover {
+    background: var(--mml-theme-color-primary-opacity-08);
+}
+
+:host.standard:active {
+    background: var(--mml-theme-color-primary-opacity-12);
+}
+
+:host.tonal {
+    background: var(--mml-theme-color-dark-on-secondary-container);
+    color: var(--mml-theme-color-on-secondary-container);
+}
+
+:host.tonal:hover {
+    background: linear-gradient(0deg, var(--mml-theme-color-on-secondary-container-opacity-08), var(--mml-theme-color-on-secondary-container-opacity-08)), var(--mml-theme-color-dark-on-secondary-container);
+}
+
+:host.tonal:active {
+    background: linear-gradient(0deg, var(--mml-theme-color-on-secondary-container-opacity-12), var(--mml-theme-color-on-secondary-container-opacity-12)), var(--mml-theme-color-dark-on-secondary-container);
+}

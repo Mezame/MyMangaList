@@ -1,0 +1,159 @@
+:host>mml-dialog .dialog-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+:host>mml-dialog .dialog-form>.manga-title {
+    width: 100%;
+}
+
+:host>mml-dialog .dialog-form>.manga-status-chapter {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+
+    width: 100%;
+}
+
+:host>mml-dialog .dialog-form>.manga-status-chapter>.manga-status {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    width: calc(50% - (24px / 2));
+}
+
+:host>mml-dialog .dialog-form>.manga-status-chapter>.manga-chapter {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    width: calc(50% - (24px / 2));
+
+    position: relative;
+}
+
+:host>mml-dialog .dialog-form>.manga-status-chapter>.manga-chapter>[mml-text-field] {
+    width: calc(50% - (24px / 2));
+    min-width: 0;
+}
+
+:host>mml-dialog .dialog-form>.manga-status-chapter>.manga-chapter>mml-supporting-text {
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+
+    width: 100%;
+}
+
+:host>mml-dialog .dialog-form>.manga-reader-sites {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+
+    width: 100%;
+}
+
+:host>mml-dialog .dialog-form>.manga-reader-sites>.wrapper-manga-reader-sites {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    position: relative;
+}
+
+:host>mml-dialog .dialog-form>.manga-reader-sites>.wrapper-manga-reader-sites>mml-supporting-text {    
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+
+    width: 100%;
+}
+
+:host>mml-dialog .dialog-form>.manga-reader-sites>.wrapper-manga-reader-sites>textarea {
+    font-family: var(--mml-theme-font-family);
+    font-style: var(--mml-theme-font-style);
+    font-weight: 400;
+    font-size: var(--mml-theme-font-size-base);
+    line-height: var(--mml-theme-font-line-height-base);
+    letter-spacing: var(--mml-theme-font-letter-spacing-base);
+}
+
+:host>mml-dialog .dialog-form>.manga-cover-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 24px;
+
+    width: 100%;
+}
+
+:host>mml-dialog .dialog-form>.manga-cover-image>.manga-upload-image {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    width: calc(50% - (24px / 2));
+}
+
+:host>mml-dialog .dialog-form>.manga-cover-image>.manga-upload-image>.upload-image-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+    width: 100%;
+    height: 56px;
+
+    border: 1px solid;
+    border-radius: 4px;
+
+    padding: 16px 20px 16px 16px;
+
+    background: none;
+    color: var(--mml-theme-color-primary);
+    border-color: var(--mml-theme-color-outline);
+}
+
+:host>mml-dialog .dialog-form>.manga-cover-image>.manga-upload-image>.upload-image-button:hover {
+    border-color: var(--mml-theme-color-on-surface);
+    cursor: pointer;
+}
+
+:host>mml-dialog .dialog-form>.manga-cover-image>.manga-upload-image>.upload-image-button>mml-icon {
+    color: var(--mml-theme-color-primary-50);
+}
+
+:host>mml-dialog .dialog-form>.manga-cover-image>.manga-upload-image>mml-supporting-text {
+    flex-direction: row;
+
+    width: auto;
+    min-height: 16px;
+}
+
+:host>mml-dialog .dialog-form>.manga-cover-image>.manga-image-preview {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 24px;
+    padding-bottom: 16px;
+}
+
+:host>mml-dialog .dialog-form>.add-manga-group-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 24px;
+
+    box-sizing: border-box;
+    width: 100%;
+}

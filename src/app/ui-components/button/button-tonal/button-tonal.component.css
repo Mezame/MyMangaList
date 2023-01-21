@@ -1,0 +1,35 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    width: auto;
+    height: auto;
+
+    padding: 10px 24px;
+    
+    border: none;
+    border-radius: 100px;
+
+    background: var(--mml-theme-color-dark-on-secondary-container);
+    color: var(--mml-theme-color-on-secondary-container);
+}
+
+:host:hover {
+    background: linear-gradient(0deg, var(--mml-theme-color-on-secondary-container-opacity-08), var(--mml-theme-color-on-secondary-container-opacity-08)), var(--mml-theme-color-dark-on-secondary-container);
+    box-shadow: var(--mml-theme-elevation-1);
+    cursor: pointer;
+}
+
+:host:active {
+    background: linear-gradient(0deg, var(--mml-theme-color-on-secondary-container-opacity-12), var(--mml-theme-color-on-secondary-container-opacity-12)), var(--mml-theme-color-dark-on-secondary-container);
+    box-shadow: none;
+}
+
+:host:disabled {
+    background: rgba(31, 31, 31, 0.12);
+    box-shadow: none;
+    color: rgba(28, 27, 31, 0.38);
+    cursor: default;
+}
